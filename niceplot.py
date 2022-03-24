@@ -4,7 +4,7 @@
 import matplotlib.pyplot as plt
 
 
-def niceplot(xdata, ydata, pnt='o-', xlabel='', ylabel='', fromzero=False):
+def niceplot(xdata, ydata, xlabel='', ylabel='', fromzero=False):
     """ here is the aforementioned 'nice' plot """
 
     label_fonts = { 'fontsize': 12, 'font': 'Arial'}
@@ -12,7 +12,7 @@ def niceplot(xdata, ydata, pnt='o-', xlabel='', ylabel='', fromzero=False):
 
     fig = plt.figure(figsize=[4, 4*0.618])
     axs = fig.add_axes([0.15,0.2,0.75,0.75])
-    axs.plot(xdata, ydata, pnt, **plot_args)
+    axs.plot(xdata, ydata, 'o-', **plot_args)
 
     axs.set_xlabel(xlabel, labelpad=4, **label_fonts)
     axs.set_ylabel(ylabel, labelpad=8, **label_fonts)
@@ -23,5 +23,3 @@ def niceplot(xdata, ydata, pnt='o-', xlabel='', ylabel='', fromzero=False):
     axs.spines[['left', 'bottom']].set_linewidth(1)
 
     return plt.show()
-
-
